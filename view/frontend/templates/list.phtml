@@ -1,0 +1,34 @@
+<?php
+
+$data =  $block->getSalenoticeCollection();
+$count=count($data);
+if($count > 0):?>
+
+
+<script type="text/javascript">
+    function saleNotice(){
+        var data = Array();
+        <?php for($i=0; $i< $count; $i++):?>
+        data[<?php echo ($i+1)?>] = '<?php echo $this->escapeJsQuote($data[$i])?>';
+        <?php endfor;?>
+        var no=Math.floor((Math.random()*<?php echo $count?>)+1)
+        jQuery.notify({
+            inline: true,
+            html: data[no],
+            close: '<a href="javascript:void(0)"><span>x</span></a>',
+            exdays:<?php echo $this->helper('PL\Salenotice\Helper\Data')->getSalenoticeCookieLifetime()?>
+        },
+            <?php echo $this->helper('PL\Salenotice\Helper\Data')->getDisplayTime()?>
+        );
+
+        setTimeout("saleNotice()",<?php echo $this->helper('PL\Salenotice\Helper\Data')->getDelayTime()?>)
+    }
+    (function  () {
+        require(['jquery', 'pl/salenotice'],function($){
+            setTimeout("saleNotice()",<?php echo $this->helper('PL\Salenotice\Helper\Data')->getFirstTime()?>);
+        });
+    })();
+
+
+</script>
+<?php endif;?>

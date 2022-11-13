@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="PL_Salenotice::salenotice" title="Sale Notices" module="PL_Salenotice" sortOrder="500" resource="PL_Salenotice::salenotice" parent="Magento_Backend::marketing"/>
+        <add id="PL_Salenotice::manage" title="Manage Item" module="PL_Salenotice" sortOrder="20" action="salenotice/salenotice" resource="PL_Salenotice::salenotice" parent="PL_Salenotice::salenotice"/>
+        <add id="PL_Salenotice::configuration" title="Configuration" sortOrder="30" module="PL_Salenotice" action="adminhtml/system_config/edit/section/salenotice" resource="PL_Salenotice::configuration" parent="PL_Salenotice::salenotice"/>
+    </menu>
+</config>

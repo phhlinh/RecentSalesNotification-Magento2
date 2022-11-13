@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="salenotice" translate="label" sortOrder="500" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Sale Notices</label>
+            <tab>general</tab>
+            <resource>PL_Salenotice::system_config</resource>
+            <group id="base_settings" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Settings</label>
+                <field id="active" translate="label" type="select" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="data" translate="label" type="select" sortOrder="1" showInDefault="10" showInWebsite="1" showInStore="1">
+                    <label>Order Data</label>
+                    <source_model>PL\Salenotice\Model\Source\Data</source_model>
+                    <comment>Use data from real orders or fake orders</comment>
+                </field>
+                <field id="order_status" translate="label comment" type="multiselect" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order status</label>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="order_limit" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Order limit</label>
+                    <comment>Apply to Real Order</comment>
+                </field>
+                <field id="first_time" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>First Time</label>
+                    <comment>Time in second</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="delay_time" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delay time</label>
+                    <comment>Time in second</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="display_time" translate="label comment" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display time</label>
+                    <comment>Time in second</comment>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="cookie_lifetime" translate="label comment" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Cookie Lifetime</label>
+                    <comment>Time in second - Apply to Close button</comment>
+                </field>
+                <field id="display_on" translate="label" type="multiselect" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display on</label>
+                    <source_model>PL\Salenotice\Model\Source\Page</source_model>
+                </field>
+
+                <field id="mobile" translate="label" type="select" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mobile Devices</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Allow showing on Mobile Devices</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

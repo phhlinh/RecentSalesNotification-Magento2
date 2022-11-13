@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <salenotice>
+            <base_settings>
+                <active>0</active>
+                <data>1</data>
+                <order_status>processing,complete</order_status>
+                <order_limit>5</order_limit>
+                <first_time>5</first_time>
+                <display_time>5</display_time>
+                <delay_time>10</delay_time>
+                <display_on>1,3,4</display_on>
+                <cookie_lifetime>86400</cookie_lifetime>
+                <mobile>0</mobile>
+            </base_settings>
+        </salenotice>
+    </default>
+</config>
