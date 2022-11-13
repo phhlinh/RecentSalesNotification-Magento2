@@ -1,0 +1,1 @@
+# RecentSalesNotification-Magento2
